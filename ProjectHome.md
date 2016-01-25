@@ -1,0 +1,1 @@
+Free Java Sample programs can be used for learning purposes.
