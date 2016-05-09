@@ -1,6 +1,10 @@
 package me.examples.ds;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Stack {
+	Logger logger = Logger.getLogger("Stack");
 
 	private int top = 0;
 	private int size = 0;
@@ -13,7 +17,7 @@ public class Stack {
 	public Stack(final int size) {
 		this.size = size;
 		stack = new int[this.size];
-		System.out.println("Stack with size " + stack.length + " created.");
+		logger.log(Level.INFO, "Stack with size " + stack.length + " created.");
 	}
 
 	public void display() {
@@ -25,7 +29,7 @@ public class Stack {
 			}
 			System.out.println();
 		} else {
-			System.out.println("stack empty. nothing to display.\n");
+			logger.warning("stack empty. nothing to display.");
 		}
 	}
 
@@ -34,7 +38,7 @@ public class Stack {
 		if (top > 0) {
 			return stack[--top];
 		} else {
-			System.err.printf("error: stack empty. nothing to pop.\n");
+			logger.warning("error: stack empty. nothing to pop.\n");
 			return -1;
 		}
 	}
@@ -44,7 +48,7 @@ public class Stack {
 		if (top < size) {
 			stack[top++] = val;
 		} else {
-			System.err.printf("error: stack full. can't push %d.\n", val);
+			logger.warning(String.format("error: stack full. can't push %d.\n", val));
 		}
 	}
 }

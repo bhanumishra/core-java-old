@@ -1,7 +1,7 @@
 package me.examples.ds;
 
 /**
- * Hello world!
+ * Testing Stack Program.
  *
  * @author Bhanu Mishra
  * @version 1.1
