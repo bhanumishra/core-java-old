@@ -1,4 +1,4 @@
-package me.example.ds;
+package me.examples.ds;
 
 public class Stack {
 

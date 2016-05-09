@@ -1,4 +1,4 @@
-package me.example;
+package me.examples;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
@@ -6,18 +6,15 @@ import junit.framework.TestSuite;
 
 /**
  * Unit test for simple App.
- *
- * @author Bhanu Mishra
- * @version 1.1
  */
-public class MainTest extends TestCase {
+public class AppTest extends TestCase {
 	/**
 	 * Create the test case
 	 *
 	 * @param testName
 	 *            name of the test case
 	 */
-	public MainTest(String testName) {
+	public AppTest(String testName) {
 		super(testName);
 	}
 
@@ -25,7 +22,7 @@ public class MainTest extends TestCase {
 	 * @return the suite of tests being tested
 	 */
 	public static Test suite() {
-		return new TestSuite(MainTest.class);
+		return new TestSuite(AppTest.class);
 	}
 
 	/**
@@ -34,5 +31,4 @@ public class MainTest extends TestCase {
 	public void testApp() {
 		assertTrue(true);
 	}
-
 }

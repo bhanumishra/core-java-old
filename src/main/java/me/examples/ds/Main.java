@@ -1,6 +1,4 @@
-package me.example;
-
-import me.example.ds.Stack;
+package me.examples.ds;
 
 /**
  * Hello world!
