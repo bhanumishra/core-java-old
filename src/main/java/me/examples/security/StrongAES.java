@@ -1,10 +1,16 @@
 package me.examples.security;
 
 import java.security.Key;
+
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 
 public class StrongAES {
+
+	public static void main(String[] args) {
+		StrongAES app = new StrongAES();
+		app.run();
+	}
 
 	public void run() {
 		try {
@@ -27,10 +33,5 @@ public class StrongAES {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
-
-	public static void main(String[] args) {
-		StrongAES app = new StrongAES();
-		app.run();
 	}
 }

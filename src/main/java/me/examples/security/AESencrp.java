@@ -15,15 +15,6 @@ public class AESencrp {
 	private static final byte[] KEY_VALUE = new byte[] { 'T', 'h', 'e', 'B', 'e', 's', 't', 'S', 'e', 'c', 'r', 'e',
 			't', 'K', 'e', 'y' };
 
-	public static String encrypt(String Data) throws Exception {
-		Key key = generateKey();
-		Cipher c = Cipher.getInstance(ALGO);
-		c.init(Cipher.ENCRYPT_MODE, key);
-		byte[] encVal = c.doFinal(Data.getBytes());
-		String encryptedValue = new BASE64Encoder().encode(encVal);
-		return encryptedValue;
-	}
-
 	public static String decrypt(String encryptedData) throws Exception {
 		Key key = generateKey();
 		Cipher c = Cipher.getInstance(ALGO);
@@ -32,6 +23,15 @@ public class AESencrp {
 		byte[] decValue = c.doFinal(decordedValue);
 		String decryptedValue = new String(decValue);
 		return decryptedValue;
+	}
+
+	public static String encrypt(String Data) throws Exception {
+		Key key = generateKey();
+		Cipher c = Cipher.getInstance(ALGO);
+		c.init(Cipher.ENCRYPT_MODE, key);
+		byte[] encVal = c.doFinal(Data.getBytes());
+		String encryptedValue = new BASE64Encoder().encode(encVal);
+		return encryptedValue;
 	}
 
 	private static Key generateKey() throws Exception {

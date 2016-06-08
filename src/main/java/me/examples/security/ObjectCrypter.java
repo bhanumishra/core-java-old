@@ -44,26 +44,6 @@ public class ObjectCrypter {
 		}
 	}
 
-	public byte[] encrypt(Object obj) throws InvalidKeyException, InvalidAlgorithmParameterException, IOException,
-			IllegalBlockSizeException, ShortBufferException, BadPaddingException {
-		byte[] input = convertToByteArray(obj);
-		enCipher.init(Cipher.ENCRYPT_MODE, key, ivSpec);
-
-		return enCipher.doFinal(input);
-		// cipher.init(Cipher.ENCRYPT_MODE, key, ivSpec);
-		// byte[] encypted = new byte[cipher.getOutputSize(input.length)];
-		// int enc_len = cipher.update(input, 0, input.length, encypted, 0);
-		// enc_len += cipher.doFinal(encypted, enc_len);
-		// return encypted;
-	}
-
-	public Object decrypt(byte[] encrypted) throws InvalidKeyException, InvalidAlgorithmParameterException,
-			IllegalBlockSizeException, BadPaddingException, IOException, ClassNotFoundException {
-		deCipher.init(Cipher.DECRYPT_MODE, key, ivSpec);
-
-		return convertFromByteArray(deCipher.doFinal(encrypted));
-	}
-
 	private Object convertFromByteArray(byte[] byteObject) throws IOException, ClassNotFoundException {
 		ByteArrayInputStream bais = new ByteArrayInputStream(byteObject);
 		ObjectInputStream in = new ObjectInputStream(bais);
@@ -80,5 +60,25 @@ public class ObjectCrypter {
 
 		out.close();
 		return baos.toByteArray();
+	}
+
+	public Object decrypt(byte[] encrypted) throws InvalidKeyException, InvalidAlgorithmParameterException,
+			IllegalBlockSizeException, BadPaddingException, IOException, ClassNotFoundException {
+		deCipher.init(Cipher.DECRYPT_MODE, key, ivSpec);
+
+		return convertFromByteArray(deCipher.doFinal(encrypted));
+	}
+
+	public byte[] encrypt(Object obj) throws InvalidKeyException, InvalidAlgorithmParameterException, IOException,
+			IllegalBlockSizeException, ShortBufferException, BadPaddingException {
+		byte[] input = convertToByteArray(obj);
+		enCipher.init(Cipher.ENCRYPT_MODE, key, ivSpec);
+
+		return enCipher.doFinal(input);
+		// cipher.init(Cipher.ENCRYPT_MODE, key, ivSpec);
+		// byte[] encypted = new byte[cipher.getOutputSize(input.length)];
+		// int enc_len = cipher.update(input, 0, input.length, encypted, 0);
+		// enc_len += cipher.doFinal(encypted, enc_len);
+		// return encypted;
 	}
 }
