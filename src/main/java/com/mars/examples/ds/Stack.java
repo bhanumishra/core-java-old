@@ -1,4 +1,4 @@
-package me.examples.ds;
+package com.mars.examples.ds;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

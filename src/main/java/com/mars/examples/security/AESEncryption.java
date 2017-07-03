@@ -1,4 +1,4 @@
-package me.examples.security;
+package com.mars.examples.security;
 
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;

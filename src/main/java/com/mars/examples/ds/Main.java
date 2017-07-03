@@ -1,4 +1,4 @@
-package me.examples.ds;
+package com.mars.examples.ds;
 
 /**
  * Testing Stack Program.

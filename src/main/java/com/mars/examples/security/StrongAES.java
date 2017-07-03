@@ -1,4 +1,4 @@
-package me.examples.security;
+package com.mars.examples.security;
 
 import java.security.Key;
 

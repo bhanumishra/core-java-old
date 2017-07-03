@@ -1,4 +1,4 @@
-package me.utils;
+package com.mars.utils;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
